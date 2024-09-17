@@ -1,5 +1,7 @@
 # Bug report for `bitbucket`
 
+[![Node.js CI](https://github.com/NatoBoram/node-bitbucket-bug-report/actions/workflows/node.js.yaml/badge.svg)](https://github.com/NatoBoram/node-bitbucket-bug-report/actions/workflows/node.js.yaml)
+
 This repository reproduces 2 bugs from the `bitbucket` package.
 
 The minimal reproduction steps are in `src/client.ts`.

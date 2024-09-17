@@ -10,8 +10,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    continue-on-error: true
-
     env:
       BITBUCKET_BASE_URL: ${{ secrets.BITBUCKET_BASE_URL }}
       BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_TOKEN }}
@@ -27,6 +25,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - run: pnpm run build --noEmit
+        continue-on-error: true
       - run: pnpm run lint
       - run: pnpm run test run
       - run: pnpm run dev
+        continue-on-error: true

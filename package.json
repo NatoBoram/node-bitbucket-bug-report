@@ -1,20 +1,14 @@
 {
-	"name": "@natoboram/gigachad.ts",
+	"name": "@natoboram/node-bitbucket-bug-report",
 	"version": "0.0.0",
-	"description": "The most gigachad project setup for TypeScript.",
+	"description": "",
 	"keywords": [
-		"dependabot",
-		"eslint",
-		"gigachad",
-		"markdownlint",
-		"prettier",
-		"project-template",
-		"typescript",
-		"vitest"
+		"bitbucket",
+		"bug-report"
 	],
-	"homepage": "https://github.com/NatoBoram/gigachad.ts",
+	"homepage": "https://github.com/NatoBoram/node-bitbucket-bug-report",
 	"bugs": {
-		"url": "https://github.com/NatoBoram/gigachad.ts/issues"
+		"url": "https://github.com/NatoBoram/node-bitbucket-bug-report/issues"
 	},
 	"license": "Unlicense",
 	"author": {
@@ -39,15 +33,11 @@
 	"bin": {
 		"gigachad": "dist/main.js"
 	},
-	"repository": "github:NatoBoram/gigachad.ts",
+	"repository": "github:NatoBoram/node-bitbucket-bug-report",
 	"scripts": {
 		"build": "tsc",
 		"clean": "rm -rf dist docs node_modules tsconfig.tsbuildinfo",
 		"dev": "tsx ./src/main.ts",
-		"docker": "pnpm run docker:build && pnpm run docker:run",
-		"docker:build": "docker build -t gigachad.ts .",
-		"docker:kill": "docker ps --format '{{.Image}} {{.ID}}' | grep gigachad.ts | awk '{print $2}' | xargs docker kill",
-		"docker:run": "docker run gigachad.ts",
 		"docs": "typedoc",
 		"format": "prettier --write .",
 		"lint": "eslint . && markdownlint-cli2 \"**/*.md\" && prettier --check .",
@@ -55,8 +45,13 @@
 		"start": "node dist/main.js",
 		"test": "vitest"
 	},
+	"dependencies": {
+		"bitbucket": "^2.12.0"
+	},
 	"devDependencies": {
 		"@eslint/js": "^9.9.1",
+		"@types/node": "^22.5.5",
+		"dotenv": "^16.4.5",
 		"eslint": "^9.9.1",
 		"eslint-config-prettier": "^9.1.0",
 		"globals": "^15.9.0",

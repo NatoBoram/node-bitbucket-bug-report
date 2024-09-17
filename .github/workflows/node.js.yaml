@@ -25,8 +25,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile --strict-peer-dependencies
       - run: pnpm run build --noEmit
-        continue-on-error: true
       - run: pnpm run lint
+        if: always()
       - run: pnpm run test run
+        if: always()
       - run: pnpm run dev
-        continue-on-error: true
+        if: always()
